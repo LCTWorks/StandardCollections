@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 
 namespace StandardCollections
-{
+{  
     /// <summary>
     /// Provides a collection of objects that can be accessed by a triangular index system.
     /// </summary>
