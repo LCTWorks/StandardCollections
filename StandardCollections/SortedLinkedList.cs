@@ -26,7 +26,7 @@ namespace StandardCollections
         private Node _head;
         private int _count;
         private Random _random;
-        internal IComparer<T> comparer;
+        internal IComparer<T> _comparer;
 
         private const int DefaultHeight = 4;
         private const double ProbFactor = 0.5d;
@@ -47,7 +47,7 @@ namespace StandardCollections
         /// <param name="comparer">The default comparer to use for compare objects.</param>
         public SortedLinkedList(IComparer<T> comparer)
         {
-            this.comparer = comparer ?? Comparer<T>.Default;
+            this._comparer = comparer ?? Comparer<T>.Default;
             _head = new Node();
             _random = new Random();
             _count = 0;
@@ -76,7 +76,7 @@ namespace StandardCollections
                 Thrower.ArgumentNullException(ArgumentType.collection);
             }
             _random = new Random();
-            this.comparer = comparer ?? Comparer<T>.Default;
+            this._comparer = comparer ?? Comparer<T>.Default;
             ReconstructFrom(collection);
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace StandardCollections
         {
             get
             {
-                return comparer;
+                return _comparer;
             }
         }
         /// <summary>
@@ -179,7 +179,7 @@ namespace StandardCollections
             {
                 while (current.Nodes[i] != null && IsInRange(current.Nodes[i].Value))
                 {
-                    int results = comparer.Compare(current.Nodes[i].Value, value);
+                    int results = _comparer.Compare(current.Nodes[i].Value, value);
                     if (results < 0)
                         current = current.Nodes[i];
                     else if (results == 0)
@@ -210,7 +210,7 @@ namespace StandardCollections
                 {
                     while (current.Nodes[i] != null && IsInRange(current.Nodes[i].Value))
                     {
-                        int results = this.comparer.Compare(current.Nodes[i].Value, value);
+                        int results = this._comparer.Compare(current.Nodes[i].Value, value);
                         if (results < 0)
                         {
                             current = current.Nodes[i];
@@ -229,7 +229,7 @@ namespace StandardCollections
                         }
                     }
                 }
-                while ((node != null) && (this.comparer.Compare(node.Value, value) == 0))
+                while ((node != null) && (this._comparer.Compare(node.Value, value) == 0))
                 {
                     if (match(node.Value))
                     {
@@ -343,7 +343,7 @@ namespace StandardCollections
         /// <returns>A sublist view that contains only the values in the specified range.</returns>
         public virtual SortedLinkedList<T> GetViewBetween(T lowerValue, T upperValue)
         {
-            if (comparer.Compare(lowerValue, upperValue) > 0)
+            if (_comparer.Compare(lowerValue, upperValue) > 0)
             {
                 Thrower.ArgumentException(ArgumentType.empty, Resources.Argument_lowerBiggerThanUpper);
             }
@@ -372,7 +372,7 @@ namespace StandardCollections
             }
             info.AddValue(SerializationString.Version, _version);
             info.AddValue(SerializationString.Count, _count);
-            info.AddValue(SerializationString.Comparer, comparer, typeof(IComparer<T>));
+            info.AddValue(SerializationString.Comparer, _comparer, typeof(IComparer<T>));
             if (_count != 0)
             {
                 T[] local = new T[Count];
@@ -390,14 +390,14 @@ namespace StandardCollections
         /// <param name="sender">The source of the deserialization event.</param>
         protected virtual void OnDeserialization(object sender)
         {
-            if (comparer == null)
+            if (_comparer == null)
             {
                 if (_sinfo == null)
                 {
                     Thrower.SerializationException(Resources.Serialization_InvalidOnDeserialization);
                 }
                 _random = new Random();
-                comparer = (IComparer<T>)_sinfo.GetValue(SerializationString.Comparer, typeof(IComparer<T>));
+                _comparer = (IComparer<T>)_sinfo.GetValue(SerializationString.Comparer, typeof(IComparer<T>));
                 _count = _sinfo.GetInt32(SerializationString.Count);
                 _head = new Node(default(T), MathHelper.Log2N(_count));
                 if (_count > 0)
@@ -481,7 +481,7 @@ namespace StandardCollections
             Node current = _head;
             for (int i = height - 1; i >= 0; i--)
             {
-                while (current.Nodes[i] != null && comparer.Compare(current.Nodes[i].Value, item) <= 0)
+                while (current.Nodes[i] != null && _comparer.Compare(current.Nodes[i].Value, item) <= 0)
                 {
                     current = current.Nodes[i];
                 }
@@ -515,7 +515,7 @@ namespace StandardCollections
             {
                 while (current.Nodes[i] != null && IsInRange(current.Nodes[i].Value))
                 {
-                    int results = comparer.Compare(current.Nodes[i].Value, item);
+                    int results = _comparer.Compare(current.Nodes[i].Value, item);
                     if (results < 0)
                     {
                         current = current.Nodes[i];
@@ -538,7 +538,7 @@ namespace StandardCollections
             Node node = _head;
             for (int i = _head.Count - 1; i >= 0; i--)
             {
-                while ((node.Nodes[i] != null) && (comparer.Compare(node.Nodes[i].Value, item) < 0))
+                while ((node.Nodes[i] != null) && (_comparer.Compare(node.Nodes[i].Value, item) < 0))
                 {
                     node = node.Nodes[i];
                 }
@@ -552,7 +552,7 @@ namespace StandardCollections
             Node node2 = null;
             for (int i = _head.Count - 1; i >= 0; i--)
             {
-                while ((node.Nodes[i] != null) && (comparer.Compare(node.Nodes[i].Value, min) < 0))
+                while ((node.Nodes[i] != null) && (_comparer.Compare(node.Nodes[i].Value, min) < 0))
                 {
                     node = node.Nodes[i];
                 }
@@ -563,7 +563,7 @@ namespace StandardCollections
         internal void ReconstructFrom(IEnumerable<T> collection)
         {
             T[] list = collection.ToArray();
-            Array.Sort(list, comparer);
+            Array.Sort(list, _comparer);
             _head = ConstructHeadFrom(list);
             _count = list.Length;
             _version++;
@@ -580,7 +580,7 @@ namespace StandardCollections
             Node[] index = FindIndexNode(item);
             Node current = index[0].Nodes[0];
 
-            if (current != null && comparer.Compare(current.Value, item) == 0)
+            if (current != null && _comparer.Compare(current.Value, item) == 0)
             {
                 for (int i = 0; (i < _head.Count) && ((index[i].Nodes[i] == current)); i++)
                 {
@@ -601,9 +601,9 @@ namespace StandardCollections
         {
             Node[] index = FindIndexNode(item);
             Node current = index[0];
-            if (current.Nodes[0] != null && comparer.Compare(current.Nodes[0].Value, item) == 0)
+            if (current.Nodes[0] != null && _comparer.Compare(current.Nodes[0].Value, item) == 0)
             {
-                while ((comparer.Compare(current.Nodes[0].Value, item) == 0) && (!match(current.Nodes[0].Value)))
+                while ((_comparer.Compare(current.Nodes[0].Value, item) == 0) && (!match(current.Nodes[0].Value)))
                 {
                     current = current.Nodes[0];
                     if (current.Nodes[0] == null)
@@ -615,7 +615,7 @@ namespace StandardCollections
                 current.Nodes[0] = matchNode.Nodes[0];
                 for (int i = 1; i < _head.Count; i++)
                 {
-                    while ((index[i].Nodes[i] != null) && (comparer.Compare(current.Value, item) == 0))
+                    while ((index[i].Nodes[i] != null) && (_comparer.Compare(current.Value, item) == 0))
                     {
                         if (index[i].Nodes[i] == matchNode)
                         {
@@ -723,11 +723,11 @@ namespace StandardCollections
             }
             public override SortedLinkedList<T> GetViewBetween(T lowerValue, T upperValue)
             {
-                if (comparer.Compare(_min, lowerValue) > 0)
+                if (_comparer.Compare(_min, lowerValue) > 0)
                 {
                     Thrower.ArgumentOutOfRangeException(ArgumentType.lowerValue, Resources.ArgumentOutOfRange_ViewValue);
                 }
-                if (comparer.Compare(_max, upperValue) < 0)
+                if (_comparer.Compare(_max, upperValue) < 0)
                 {
                     Thrower.ArgumentOutOfRangeException(ArgumentType.upperValue, Resources.ArgumentOutOfRange_ViewValue);
                 }
@@ -758,12 +758,12 @@ namespace StandardCollections
             }
             internal override bool IsInRange(T item)
             {
-                int low = comparer.Compare(_min, item);
+                int low = _comparer.Compare(_min, item);
                 if (low > 0)
                 {
                     return false;
                 }
-                return comparer.Compare(_max, item) >= 0;
+                return _comparer.Compare(_max, item) >= 0;
             }
             internal override bool InternalRemove(T item)
             {
@@ -806,7 +806,7 @@ namespace StandardCollections
             {
                 if (_sinfo != null)
                 {
-                    comparer = (IComparer<T>)_sinfo.GetValue(SerializationString.Comparer, typeof(IComparer<T>));
+                    _comparer = (IComparer<T>)_sinfo.GetValue(SerializationString.Comparer, typeof(IComparer<T>));
                     _max = (T)_sinfo.GetValue(SerializationString.Max, typeof(T));
                     _min = (T)_sinfo.GetValue(SerializationString.Min, typeof(T));
                     int count = _sinfo.GetInt32(SerializationString.Count);
@@ -983,7 +983,7 @@ namespace StandardCollections
 
                 if (before != null)
                 {
-                    int num = _list.comparer.Compare(_current, before);
+                    int num = _list._comparer.Compare(_current, before);
                     if ((num == 0) && (_index != 1))
                     {
                         steps++;
