@@ -1,29 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Company>LCT Works</Company>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <AssemblyName>StandardCollections</AssemblyName>
+    <RootNamespace>StandardCollections</RootNamespace>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <PackageId>StandardCollections</PackageId>
     <Authors>Leisvan Cordero</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/LCTWorks/StandardCollections</PackageProjectUrl>
-    <PackageIconUrl>http://lctworks.com/wp-content/uploads/2018/10/StandardC_Logo_256.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/LCTWorks/StandardCollections/blob/master/LICENSE.MD</PackageLicenseUrl>
-    <RepositoryUrl>https://github.com/LCTWorks/StandardCollections</RepositoryUrl>
-    <PackageTags>Collections DataStructures CSharp dotNetStandard dotNetStandard20</PackageTags>
+    <Company>LCT Works</Company>
     <Description>An extended set of collections for .NET Standard</Description>
     <Copyright>©2018. LCT Works</Copyright>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.2</Version>
-    <FileVersion>1.1.1.0</FileVersion>
+    <PackageLicenseUrl>https://github.com/LCTWorks/StandardCollections/blob/master/LICENSE.MD</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/LCTWorks/StandardCollections</PackageProjectUrl>
+    <PackageIconUrl>http://lctworks.com/wp-content/uploads/2018/10/StandardC_Logo_256.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/LCTWorks/StandardCollections</RepositoryUrl>
+    <PackageTags>Collections DataStructures CSharp dotNetStandard dotNetStandard20</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>E:\Apps Dev\Apps\StandardCollections\StandardCollections\StandardCollections\StandardCollections.xml</DocumentationFile>
+    <DocumentationFile>E:\Apps Dev\Apps\StandardCollections\StandardCollections\StandardCollections10\StandardCollections.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="StandardCollections.xml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

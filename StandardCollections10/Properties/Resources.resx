@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArgumentOutOfRange_ColIndex" xml:space="preserve">
+    <value>Index was out of range. Must be in a valid column range.</value>
+  </data>
+  <data name="ArgumentOutOfRange_EntryOutOfBounds" xml:space="preserve">
+    <value>An entry contained in the specified collection is out of the bound of the matrix.</value>
+  </data>
+  <data name="ArgumentOutOfRange_Index" xml:space="preserve">
+    <value>Index was out of range. Must be non-negative and less than the size of the collection.</value>
+  </data>
+  <data name="ArgumentOutOfRange_Negative" xml:space="preserve">
+    <value>Positive value is required.</value>
+  </data>
+  <data name="ArgumentOutOfRange_Range_G" xml:space="preserve">
+    <value>Valid values are between '{0}' and '{1}', inclusive.</value>
+  </data>
+  <data name="ArgumentOutOfRange_RowIndex" xml:space="preserve">
+    <value>Index was out of range. Must be in a valid row range.</value>
+  </data>
+  <data name="ArgumentOutOfRange_TriangularIndex" xml:space="preserve">
+    <value>Indices were out of the modifiable bounds of the matrix. Please try to modify a valid range value.</value>
+  </data>
+  <data name="ArgumentOutOfRange_ViewValue" xml:space="preserve">
+    <value>Specified argument was out of the range of valid values. Specify a value inside the current view bounds.</value>
+  </data>
+  <data name="Argument_ArrayNotLongEnought" xml:space="preserve">
+    <value>Array is not long enough.</value>
+  </data>
+  <data name="Argument_ArrayRank" xml:space="preserve">
+    <value>Attempted to operate on an array with the incorrect number of dimensions.</value>
+  </data>
+  <data name="Argument_InvalidArrayType" xml:space="preserve">
+    <value>Target array type is not compatible with the type of items in current context.</value>
+  </data>
+  <data name="Argument_LinkedNode_G" xml:space="preserve">
+    <value>Node is attached to another {0}.</value>
+  </data>
+  <data name="Argument_LinkSourceInvalid" xml:space="preserve">
+    <value>Invalid value for "source" argument, this collection only allows links with a common source.</value>
+  </data>
+  <data name="Argument_LinkTargetInvalid" xml:space="preserve">
+    <value>Invalid value for "target" argument, this collection only allows links with a common target.</value>
+  </data>
+  <data name="Argument_lowerBiggerThanUpper" xml:space="preserve">
+    <value>lowerBound is greater than upperBound</value>
+  </data>
+  <data name="Argument_LowerBoundArrayNotZero" xml:space="preserve">
+    <value>The lower bound of target array must be zero.</value>
+  </data>
+  <data name="Argument_MatrixDimensionsNotMatch" xml:space="preserve">
+    <value>The dimensions of the specified matrixes are different.</value>
+  </data>
+  <data name="Argument_NullOrNotSpectedType_G" xml:space="preserve">
+    <value>The specified argument is null or does not represents an instance of the {0} class.</value>
+  </data>
+  <data name="Argument_SourceMissed" xml:space="preserve">
+    <value>The specified source is do not exist in the collection. Use a contained key as source.</value>
+  </data>
+  <data name="Argument_TargetMissed" xml:space="preserve">
+    <value>The specified target is do not exist in the collection. Use a contained key as target.</value>
+  </data>
+  <data name="Argument_TriangularBaseNotMatch" xml:space="preserve">
+    <value>The specified matrixes do not share the Base value.</value>
+  </data>
+  <data name="Argument_UnknownNode_G" xml:space="preserve">
+    <value>Node does not belong to current {0}.</value>
+  </data>
+  <data name="Argument_WrongType_G" xml:space="preserve">
+    <value>The value '{0}' is not of type '{1}' and cannot be used in this generic context.</value>
+  </data>
+  <data name="InvalidCast_ReturnTypeNotCompatible_G" xml:space="preserve">
+    <value>Unable to cast object of type {0} to type {1} which is the return type of the "{2}" operation according to the specified arithmetic operator argument.</value>
+  </data>
+  <data name="InvalidOperation_ColumnIndex" xml:space="preserve">
+    <value>Matrix has been modified. Current column index does not exist anymore.</value>
+  </data>
+  <data name="InvalidOperation_DefaultValueNotAllowed" xml:space="preserve">
+    <value>Current matrix does not allows default values.</value>
+  </data>
+  <data name="InvalidOperation_EmptyCollection" xml:space="preserve">
+    <value>Collection is empty.</value>
+  </data>
+  <data name="InvalidOperation_EnumCorrupt" xml:space="preserve">
+    <value>Collection was modified; enumeration operation may not excecute.</value>
+  </data>
+  <data name="InvalidOperation_EnumEnded" xml:space="preserve">
+    <value>Enumeration already finished</value>
+  </data>
+  <data name="InvalidOperation_EnumInvalid" xml:space="preserve">
+    <value>Enumeration has either not started or has already finished</value>
+  </data>
+  <data name="InvalidOperation_EnumNotStarted" xml:space="preserve">
+    <value>Enumeration has not started. Call MoveNext().</value>
+  </data>
+  <data name="InvalidOperation_GraphKeyMissed" xml:space="preserve">
+    <value>Graph was modified; node key does not exist anymore.</value>
+  </data>
+  <data name="InvalidOperation_GraphKeysRelation" xml:space="preserve">
+    <value>Graph was modified; source and/or target key does not exist anymore.</value>
+  </data>
+  <data name="InvalidOperation_GraphRelationBroken" xml:space="preserve">
+    <value>Graph was modified; element does not exist anymore.</value>
+  </data>
+  <data name="InvalidOperation_InvMethodCall" xml:space="preserve">
+    <value>Method call is invalid for this collection.</value>
+  </data>
+  <data name="InvalidOperation_KeyMissedOnCollection" xml:space="preserve">
+    <value>Underlying collection was modified; current key is not contained anymore.</value>
+  </data>
+  <data name="InvalidOperation_MatrixDimensionInvalid" xml:space="preserve">
+    <value>The left matrix operand should have the same dimensions (row and column) than the second matrix column dimension in order to be modified by this operation.</value>
+  </data>
+  <data name="InvalidOperation_MatrixDimensionsNotMatches" xml:space="preserve">
+    <value>The matrices should have the same number of Rows and Columns to perform this operation.</value>
+  </data>
+  <data name="InvalidOperation_MatrixDimensionsTooBig" xml:space="preserve">
+    <value>Matrix dimensions are too big to perform current operation.</value>
+  </data>
+  <data name="InvalidOperation_MatrixNotAccessible_G" xml:space="preserve">
+    <value>The left matrix operand threw when trying to modify index [{0},{1}].</value>
+  </data>
+  <data name="InvalidOperation_MultiplicityDimensionsNotMatch" xml:space="preserve">
+    <value>The first matrix should have the same number of rows than the second matrix number of columns. And also the same number of columns than the second matrix number of rows.</value>
+  </data>
+  <data name="InvalidOperation_NoSubsetContained" xml:space="preserve">
+    <value>The current disjoint set has no subset associated. Almost one subset is required to perform this operation.</value>
+  </data>
+  <data name="InvalidOperation_NotAllowedOnASparseMatrix" xml:space="preserve">
+    <value>Current operation can not be performed over the elements in a sparse matrix</value>
+  </data>
+  <data name="InvalidOperation_RowIndex" xml:space="preserve">
+    <value>Matrix has been modified. Current row index does not exist anymore.</value>
+  </data>
+  <data name="InvalidOperation_SetKeyMissed" xml:space="preserve">
+    <value>Set was modified; sub set does not exist anymore.</value>
+  </data>
+  <data name="KeyNotFound_DSetInvalidKey" xml:space="preserve">
+    <value>The given key was not present in the disjoint set.</value>
+  </data>
+  <data name="NotSupported_ReadOnlyCollection" xml:space="preserve">
+    <value>Collection is read-only.</value>
+  </data>
+  <data name="Serialization_CountNotMatch" xml:space="preserve">
+    <value>The serialized Count information doesn't match the number of items.</value>
+  </data>
+  <data name="Serialization_InvalidOnDeserialization" xml:space="preserve">
+    <value>OnDeserialization method was called while the object was not being deserialized.</value>
+  </data>
+  <data name="Serialization_ValuesMissing" xml:space="preserve">
+    <value>The Values for this collection are missing.</value>
+  </data>
+</root>
